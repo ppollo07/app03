@@ -1,0 +1,185 @@
+/* Empty. Add your own CSS if you like */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+body{
+	height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.bg-image {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-image: url("../img/bg.jpg");
+	background-attachment: fixed; 
+}
+.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 50px;
+  height: 50px;
+}
+/*.view, .pane {
+	background: transparent;
+}*/
+.logo{
+	margin: 0 auto;
+	width: 245px;
+	height: 185px;
+	background: url('../img/logo.png') no-repeat;
+}
+#main-content {
+    color: #FFFFFF;
+    padding-top: 0px;
+}
+.menu-nav.menus{
+	margin: 0 auto;
+	width: 245px;
+	height: 251px;
+	background: url('../img/bg_menu.png') no-repeat;
+}
+#menus ul > li a{
+	float: left;
+}
+#menus ul > li{
+	float: left;
+	display: inline;
+	padding: 10px 16px;
+}
+.wrapper{
+	background-color: #363636;
+}
+.bar.bar-stable{
+	height: 50px;
+	background-color: #E3B333;
+	-webkit-box-shadow: 0px 8px 23px -7px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 8px 23px -7px rgba(0,0,0,0.75);
+	box-shadow: 0px 8px 23px -7px rgba(0,0,0,0.75);
+}
+.has-header{
+	top: 50px
+}
+.menu .has-header{
+	background-color: #E3B333;
+}
+.menu .item{
+	border: none;
+}
+.menu .item a.item-content{
+	background-color: #E3B333;
+	font-family: 'Lato', sans-serif;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 400;
+	text-decoration: none;
+}
+.menu .item a.item-content:hover{
+	background-color: #363636;
+}
+.bar.bar-stable .title{
+	color: #FFF;
+}
+h1.title{
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	font-size: 18px !important;
+	left: 0px !important;
+	right: 0px !important;
+}
+.left-buttons .ion-navicon-round{
+	color: #FFF;
+}
+.sm{
+	margin: 0px;
+	padding: 0px;
+}
+.letra_b{
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFF;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.letra_c{
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFF;
+	font-size: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-top: 4px;
+	position: relative;
+	/*float: left;*/
+	padding-right: 6px;
+}
+p.datos_{
+	font-family: 'Ubuntu', sans-serif;
+	color: #efc221;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.center{
+	text-align: center;
+}
+.resultados_{
+	padding-top: 20px;
+	position: relative;
+	margin: 0 auto;
+	width: 90%;
+}
+hr{
+	border-top: 1px solid #515050;
+}
+.grade-b .menu-content, .grade-c .menu-content{
+	border: none;
+	left: 0px;
+	right: 0px;
+}
+.btn_per{
+	background-color: #E3B333 !important;
+	font-family: 'Lato', sans-serif;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 900;
+	text-decoration: none;
+}
+.list .item.item-accordion {
+	line-height: 38px;
+	padding-top: 0;
+	padding-bottom: 0;
+	transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+	line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+	display: block !important;
+}
+.item.active.item-stable, .item.activated.item-stable, .item-complex.active .item-content.item-stable, .item-complex.activated .item-content.item-stable{
+	border: none !important;
+}
+.list .item.item-accordion{
+	background-color: #E3B333 !important;
+	font-family: 'Lato', sans-serif;
+	color: #FFF;
+	font-size: 13px;
+	font-weight: 400;
+	text-decoration: none;
+	border-bottom: 1px;
+	border-left: 0px;
+	border-top: 0px;
+	border-right: 0px;
+	border: #363636 solid;
+}
+.item.item-stable{
+	border: 1px #363636 solid;
+}
+.item-stable{
+	background-color: #E3B333 !important;
+	font-family: 'Lato', sans-serif;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 900;
+	text-decoration: none;
+}

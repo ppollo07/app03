@@ -1,0 +1,40 @@
+<ion-view title="TÚ RÍO PINTO">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon-round"></button>
+    </ion-nav-buttons>
+        <ion-content class="has-header wrapper">
+        <!-- <ion-list>
+        <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+        </ion-item>
+        </ion-list> -->
+            <div class="row sm">
+                <div class="resultados_">
+                    <div class="col-xs-12 sm">
+                        <p class="datos_ center">{{resultados.data.personas[0].nombre}} {{resultados.data.personas[0].apellido}}</p>
+                        <hr>
+                    </div>
+                    <div class="col-xs-3 sm center">
+                        <p class="datos_"><span class="letra_c">N°: </span>{{resultados.data.personas[0].nCorredor}}</p>
+                    </div>
+                    <div class="col-xs-9 sm center">
+                        <p class="datos_"><span class="letra_c">CATEGORÍA: </span>{{resultados.data.personas[0].categoria}}</p>
+                    </div>
+                    <div class="col-xs-12 sm">
+                        <hr>
+                    </div>
+                    <div class="col-xs-12 sm">
+                        <p class="datos_"><span class="letra_c">ENTREGA DE KIT: </span>{{resultados.data.personas[0].kit}}</p>
+                        <p class="datos_"><span class="letra_c">HORARIO DE LARGADA: </span>{{resultados.data.personas[0].nCorredor}}</p>
+                        <hr>
+                    </div>
+                    <div class="col-xs-12 sm">
+                        <p class="datos_"><span class="letra_c">TIEMPO: </span>{{resultados.data.personas[0].tiempo}}</p>
+                        <p class="datos_"><span class="letra_c">POSICIÓN: </span>{{resultados.data.personas[0].posicionGeneral}}</p>
+                        <hr>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </ion-content>
+</ion-view>

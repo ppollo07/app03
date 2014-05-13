@@ -1,0 +1,20 @@
+<ion-view title="TÚ RÍO PINTO">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon-round"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header wrapper">
+        <div class="row sm">
+            <div class="resultados_">
+                <div class="col-xs-12 sm">
+                    <label class="item item-input">
+                        <input type="number" placeholder="DNI" ng-model="NewUser.id">
+                    </label>
+                    <a class="button button-stable button-block btn_per" ng-click="buscar(NewUser)">
+                        BUSCAR 
+                    </a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

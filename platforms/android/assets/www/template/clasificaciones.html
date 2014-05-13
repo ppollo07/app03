@@ -1,0 +1,50 @@
+<ion-view title="TÚ RÍO PINTO">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon-round"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header wrapper">
+    <!-- <ion-list>
+    <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+    {{playlist.title}}
+    </ion-item>
+    </ion-list> -->
+        <div class="row sm">
+            <div class="resultados_">
+                <div class="col-xs-12 sm">
+                    <ion-list>
+                        <div class="cat_masculina">
+                            <ion-item class="item-stable"
+                                ng-click="toggleGroup('cat_masculina')"
+                                ng-class="{active: isGroupShown('cat_masculina')}">
+                            <i class="icon" ng-class="isGroupShown('cat_masculina') ? 'ion-minus' : 'ion-plus'"></i>
+                                &nbsp;
+                                CATEGORIA MASCULINA
+                            </ion-item>
+                            <ion-item class="item-accordion"
+                                ng-repeat="cat in tipoCatM"
+                                ng-show="isGroupShown('cat_masculina')">
+                                {{cat.nombre}}
+                            </ion-item>
+                        </div>
+
+                        <div class="cat_femenina">
+                            <ion-item class="item-stable"
+                                ng-click="toggleGroup('cat_femenina')"
+                                ng-class="{active: isGroupShown('cat_femenina')}">
+                            <i class="icon" ng-class="isGroupShown('cat_femenina') ? 'ion-minus' : 'ion-plus'"></i>
+                                &nbsp;
+                                CATEGORIA FEMENINA
+                            </ion-item>
+                            <ion-item class="item-accordion"
+                                ng-repeat="cat in tipoCatF"
+                                ng-show="isGroupShown('cat_femenina')">
+                                {{cat.nombre}}
+                            </ion-item>
+                        </div>
+                    </ion-list>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
