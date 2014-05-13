@@ -4,24 +4,54 @@ angular.module('AppStart.controllers', [])
     $ionicSideMenuDelegate.$getByHandle('menun').canDragContent(0)
 }])
 
-.controller('PortadaCtrl', ['$scope', '$ionicSideMenuDelegate', '$state', '$stateParams', function ($scope, $ionicSideMenuDelegate, $state, $stateParams) {
+.controller('PortadaCtrl', ['$scope', '$ionicSideMenuDelegate', '$state', '$stateParams', 'cacheService', function ($scope, $ionicSideMenuDelegate, $state, $stateParams, cacheService) {
     $scope.NewUser = {}
     $ionicSideMenuDelegate.$getByHandle('menun').canDragContent(1)
     $scope.menuIsEnabled = function() {
         $ionicSideMenuDelegate.$getByHandle('menun').toggleRight()
     };
+    try{
+        if (localStorage.getItem) {
+            if (cacheService.getData('TuRioPinto') != null) {
+                var NewUser = JSON.parse(cacheService.getData('xDni'));
+                console.log(NewUser)
+                $state.go('app.TuRioPinto', NewUser)
+            }
+        }
+    } catch(e){
+        console.log("Error");
+    }
     $scope.buscar = function() {
-        $state.go('app.TuRioPinto',$scope.NewUser)
+        $state.go('app.TuRioPinto', $scope.NewUser)
     };
 }])
 
-.controller('DatosCtrl', ['$scope', '$ionicSideMenuDelegate', '$state', '$stateParams', 'RioService', function ($scope, $ionicSideMenuDelegate, $state, $stateParams, RioService) {
-
-    var data = RioService.getPinto($stateParams.id);
-    data.then(function(data) {
-        $scope.resultados = data;
+.controller('DatosCtrl', ['$scope', '$ionicSideMenuDelegate', '$state', '$stateParams', 'RioService', 'cacheService', function ($scope, $ionicSideMenuDelegate, $state, $stateParams, RioService, cacheService) {
+    var storage;
+    try{
+        if (localStorage.getItem){
+            if (cacheService.getData('TuRioPinto') === null) {
+                var data = RioService.getPinto($stateParams.id);
+                data.then(function (data) {
+                    console.log(data.errorJson)
+                    if(!data){}
+                    $scope.resultados = data;
+                    var TuRioPinto = $scope.resultados;
+                    // var xDni = $stateParams.id;
+                    // cacheService.setData('xDni', xDni);
+                    // cacheService.setData('TuRioPinto', TuRioPinto);
+                });
+            }else{
+                var resultados = JSON.parse(cacheService.getData('TuRioPinto'));
+                $scope.resultados = resultados;
+                storage =  localStorage;
+                //console.log(storage);
+            }
+        }
+    } catch(e){
+        storage = {};
+    }
     //console.log($scope.resultados.data.personas[0].nombre);
-});
 }])
 
 .controller('ClasificacionesCtrl', ['$scope', 'CategoriaService', 'cacheService', function ($scope, CategoriaService, cacheService) {
@@ -31,7 +61,7 @@ angular.module('AppStart.controllers', [])
             /*
             Devuelve categorias Masculinas
              */
-            if (cacheService.getData('CatMas') === null){
+            if (cacheService.getData('CatMas') === null) {
                 var data = CategoriaService.getCategorias('M');
                 data.then(function(data) {
                     $scope.categorias = data;
@@ -49,7 +79,7 @@ angular.module('AppStart.controllers', [])
             /*
             Devuelve categorias Femeninas
              */
-            if (cacheService.getData('CatFem') === null){
+            if (cacheService.getData('CatFem') === null) {
                 var data = CategoriaService.getCategorias('F');
                 data.then(function(data) {
                     $scope.categorias = data;
